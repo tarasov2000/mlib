@@ -1,3 +1,13 @@
+/**
+ * @file window_manager.cpp
+ *
+ * @brief Stores realization of some methods from window_manager.
+ *
+ * @author Ihor Tarasov
+ * Contact: mov.ax.38@gmail.com
+ *
+ */
+
 #include <graph/window_manager.hpp>
 
 #include <mutex>
@@ -9,11 +19,14 @@ using namespace std;
 
 namespace graph {
 
+/*! Singletone realization. */
 window_manager& window_manager::get_instance() {
 	static window_manager windows;
 	return windows;
 }
 
+/*! Method get all events from window events queue and catch
+	window closings. */
 bool window_manager::poll_events() {
 	static SDL_Event e;
 	while (SDL_PollEvent(&e)) {
@@ -33,3 +46,4 @@ bool window_manager::poll_events() {
 }
 
 }
+

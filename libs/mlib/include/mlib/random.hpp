@@ -6,14 +6,18 @@
 
 namespace mlib
 {
-	namespace random
+	/*! Class for generating random numbers. */
+	class random
 	{
-		void init() {
+	public:
+		/*! Initialize random generator. */
+		static void init() {
 			srand(static_cast<unsigned int>(time(nullptr)));
 		}
 
+		/*! Generate next random number. */
 		template <typename T>
-		T next() {
+		static T next() {
 			return 1.0 - (static_cast<float>(rand()) / RAND_MAX) * 2.0;
 		}
 

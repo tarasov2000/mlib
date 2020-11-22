@@ -7,15 +7,28 @@
 
 namespace mlib {
 	class buffer;
-
+	
+	/*! Class created for drawings buffers. */
 	class mlib_render : public graph::render {
+		/*! Width and height of render zone. */
 		unsigned w, h;
+		
+		/*! Scale x and y. */
 		float sx, sy;
 	public:
-		mlib_render(graph::window&, float sw, float sh);
+		/*! Constructor initializes renderer with maximum width and height.
+			@param w - Widnow for render.
+			@param sw - Maximum width of function.
+			@param sh - Maximum height of function.
+		*/
+		mlib_render(graph::window& w, float sw, float sh);
 
-		void draw(const buffer&);
+		/*! Draws buffer of screen as function graphic.
+			@param b - Buffer for outputing.
+		*/
+		void draw(const buffer& b);
 	};
 }
 
 #endif /* MLIB_MLIB_RENDER_HPP */
+

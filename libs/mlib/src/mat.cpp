@@ -1,8 +1,19 @@
+/**
+ * @file mat.cpp
+ *
+ * @brief Stores realization of some methods from mat.
+ *
+ * @author Ihor Tarasov
+ * Contact: mov.ax.38@gmail.com
+ *
+ */
+
 #include <mlib/mat.hpp>
 
 namespace mlib {
 namespace priv {
 
+/*! Finding inverse matrix for more information see `mat.hpp`. */
 void inverse(number** m, unsigned d) {
 	// Inversion by LU decomposition
 	for (unsigned i = 1; i < d; i++) {
@@ -63,3 +74,4 @@ void inverse(number** m, unsigned d) {
 
 }
 }
+

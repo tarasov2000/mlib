@@ -1,3 +1,13 @@
+/**
+ * @file main.cpp
+ *
+ * @brief File with `main` function.
+ *
+ * @author Ihor Tarasov
+ * Contact: mov.ax.38@gmail.com
+ *
+ */
+
 #include <iostream>
 
 #include <cmath>

@@ -1,3 +1,13 @@
+/**
+ * @file window.cpp
+ *
+ * @brief Stores realization of some methods from window.
+ *
+ * @author Ihor Tarasov
+ * Contact: mov.ax.38@gmail.com
+ *
+ */
+
 #include <graph/window.hpp>
 
 #include <stdexcept>
@@ -13,6 +23,7 @@ namespace graph {
 
 namespace {
 
+/*! Function for creating window on widnow center. */
 SDL_Window* create_window(const char* title, unsigned &w, unsigned &h) {
 	SDL_Rect bounds;
 	SDL_GetDisplayBounds(0, &bounds);
@@ -27,6 +38,7 @@ SDL_Window* create_window(const char* title, unsigned &w, unsigned &h) {
 
 }
 
+/*! Creating window and adding it on window_manager collection. */
 window::window(const string& title)
 	: m_window(create_window(title.c_str(), w, h)) {
 	if (!m_window) {
@@ -39,3 +51,4 @@ window::window(const string& title)
 }
 
 }
+

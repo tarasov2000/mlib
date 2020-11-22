@@ -1,9 +1,21 @@
+/**
+ * @file buffer.cpp
+ *
+ * @brief Stores realization of some methods from buffer.
+ *
+ * @author Ihor Tarasov
+ * Contact: mov.ax.38@gmail.com
+ *
+ */
+
 #include <mlib/buffer.hpp>
 
 #include <algorithm>
 #include <cmath>
 
 namespace mlib {
+
+/* FOR MORE INFO ABOUT THIS METHODS SEE `buffer.hpp`. */
 
 buffer::buffer()
 	: m_data(new number[BUFFER_SIZE]) { }
@@ -95,3 +107,4 @@ std::ostream& operator <<(std::ostream& os, const mlib::buffer& d) {
 }
 
 }
+

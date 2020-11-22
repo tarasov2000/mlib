@@ -8,13 +8,19 @@
 
 namespace mlib {
 	namespace priv {
+		/*! Function for inversing matrix. */
 		void inverse(number** m, unsigned d);
 	}
 
+	/*! Class represents DxD matrix. */
 	template <unsigned D>
 	class mat {
+	
+		/*! Data of matrix. */
 		number m_data[D][D];
 	public:
+		/*! Generates the data from buffer.
+			@param b - Buffer with data. */
 		mat(const buffer& b) {
 			number arr[D * 2 -1];
 			buffer temp;
@@ -29,21 +35,28 @@ namespace mlib {
 				}
 			}
 		}
-
+		
+		/*! Indexer. */
 		inline number* operator [](unsigned y) {
 			return m_data[y];
 		}
-
+		
+		/*! Constant-ndexer. */
 		inline const number* operator [](unsigned y) const {
 			return m_data[y];
 		}
 
+		/*! Inverses this matrix. */
 		void inverse() {
 			priv::inverse(m_data, D);
 		}
 
 	};
 
+	/*! Matrix - Vector multiplication.
+		@param m - Left hand-side.
+		@param v - Right hand-side.
+	*/
 	template <unsigned D>
 	mlib::vec<D> operator *(const mlib::mat<D>& m, const mlib::vec<D>& v) {
 		mlib::vec<D> r;
@@ -64,7 +77,8 @@ namespace mlib {
 		}
 		return r;
 	}
-
+	
+	/*! Overloading of operator for output the matrix to `std::cout`. */
 	template <unsigned D>
 	std::ostream& operator <<(std::ostream& os, const mlib::mat<D>& m) {
 		os << "[ " << std::endl;

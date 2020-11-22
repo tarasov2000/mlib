@@ -1,3 +1,13 @@
+/**
+ * @file sdl2.cpp
+ *
+ * @brief Stores realization of some methods from sdl2.
+ *
+ * @author Ihor Tarasov
+ * Contact: mov.ax.38@gmail.com
+ *
+ */
+
 #include <graph/sdl2.hpp>
 
 #include <stdexcept>
@@ -11,6 +21,7 @@ namespace graph {
 
 volatile unsigned long long sdl2::counter = 0;
 
+/*! Initializing SDL2 only once. */
 sdl2::sdl2() {
 	lock_guard<mutex> lock(m_mutex);
 	if (counter == 0) {
@@ -22,6 +33,7 @@ sdl2::sdl2() {
 	counter++;
 }
 
+/*! Quiting SDL2 only once. */
 sdl2::~sdl2() {
 	lock_guard<mutex> lock(m_mutex);
 	if (counter == 1) {
@@ -31,3 +43,4 @@ sdl2::~sdl2() {
 }
 
 }
+
