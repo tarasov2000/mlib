@@ -14,7 +14,7 @@ documentation download file and run `index.html` using your browser.
 * C++
 * graph
 
-# Building
+# Build
 ## Linux
 
 ```Shell
