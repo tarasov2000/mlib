@@ -21,7 +21,7 @@ namespace mlib
 			return 1.0 - (static_cast<float>(rand()) / RAND_MAX) * 2.0;
 		}
 
-	}
+	};
 }
 
 #endif /* MLIB_RANDOM_HPP */
