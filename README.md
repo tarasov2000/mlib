@@ -1,8 +1,6 @@
 # MLib
 Mathematics library
 
-[Old repository](https://github.com/tarasov2000/AILab)
-
 [Code documentation generated with doxygen](docs/html/) to open
 documentation download file and run `index.html` using your browser.
 
