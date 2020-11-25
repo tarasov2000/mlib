@@ -18,8 +18,14 @@ documentation download file and run `index.html` using your browser.
 ## Linux
 
 ```Shell
+sudo apt install libsdl2-dev
 git clone https://github.com/tarasov2000/mlib.git
 cd mlib
 make
+```
+
+Run
+
+```Shell
 ./ailab
 ```
