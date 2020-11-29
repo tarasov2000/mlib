@@ -12,6 +12,7 @@
  */
 
 #include <map>
+#include <mutex>
 
 #include <graph/noncopyable.hpp>
 
@@ -24,6 +25,9 @@ namespace graph {
 		
 		/*! Key-value storage for window id and pointers to window.*/
 		std::map<unsigned, window*> m_windows;
+		
+		/*! Mutex for creating windows in differend threads. */
+		std::mutex m_mutex;
 
 		/*! Private default constructor. */
 		window_manager() = default;

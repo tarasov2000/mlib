@@ -45,8 +45,8 @@ window::window(const string& title)
 		throw runtime_error("Unable to create window. SDL_Error: " +
 				string(SDL_GetError()));
 	}
-	lock_guard<mutex> lock(m_mutex);
 	window_manager& m = window_manager::get_instance();
+	lock_guard<mutex> lock(m.m_mutex);
 	m.m_windows.insert({SDL_GetWindowID(m_window), this});
 }
 

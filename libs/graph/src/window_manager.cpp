@@ -32,8 +32,8 @@ bool window_manager::poll_events() {
 	while (SDL_PollEvent(&e)) {
 		if (e.type == SDL_WINDOWEVENT) {
 			if (e.window.event == SDL_WINDOWEVENT_CLOSE) {
+				lock_guard<mutex> lock(m_mutex);
 				window* w = m_windows[e.window.windowID];
-				lock_guard<mutex> lock(w->m_mutex);
 				m_windows.erase(e.window.windowID);
 				SDL_DestroyWindow(w->m_window);
 			}

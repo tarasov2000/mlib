@@ -32,9 +32,6 @@ class window : protected noncopyable {
 
 	/*! Pointer to SDL2 window data. */
 	SDL_Window* m_window;
-
-	/*! Mutex for adding window to window_manager. */
-	std::mutex m_mutex;
 public:
 
 	/*! Creates window.
